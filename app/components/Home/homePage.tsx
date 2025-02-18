@@ -1,6 +1,5 @@
 import { assets } from "@/assets/assets";
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "motion/react";
 
 export default function HomePage() {
@@ -45,7 +44,7 @@ export default function HomePage() {
         transition={{ duration: 0.6, delay: 0.3 }}
         className="flex items-center text-center gap-2 text-xl md:text-2xl mb-3"
       >
-        Hi I'm Dheena
+        Hi I&apos;m Dheena
         <Image src={assets.hand_icon} alt="" className="w-6"></Image>
       </motion.h3>
       <motion.h1
@@ -63,8 +62,9 @@ export default function HomePage() {
         className="max-w-2xl mx-auto"
       >
         Passionate Software Engineer with expertise in Next.js. Committed to
-        creating engaging and user-friendly web applications, I'm dedicated to
-        continuous learning and excited about the opportunities that lie ahead.
+        creating engaging and user-friendly web applications, I&apos;m dedicated
+        to continuous learning and excited about the opportunities that lie
+        ahead.
       </motion.p>
 
       <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">

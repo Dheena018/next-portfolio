@@ -3,7 +3,6 @@ import Navbar from "./components/Navbar/navbar";
 import HomePage from "./components/Home/homePage";
 import About from "./components/About/about";
 import Services from "./components/Services/services";
-import Work from "./components/Work/work";
 import Contact from "./components/Contact/contact";
 import Footer from "./components/Footer/footer";
 import { useEffect, useState } from "react";
@@ -37,7 +36,7 @@ export default function Home() {
       <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       <HomePage />
       <About isDarkMode={isDarkMode} />
-      <Services isDarkMode={isDarkMode} />
+      <Services />
       {/* <Work isDarkMode={isDarkMode} setIsDarkMode={ setIsDarkMode}/> */}
       <Contact />
       <Footer isDarkMode={isDarkMode} />

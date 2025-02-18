@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 import { motion } from "motion/react";
 
-const Services = ({ isDarkMode }: { isDarkMode: boolean }) => {
+const Services = () => {
   return (
     <motion.div
       initial={{ opacity: 0 }}

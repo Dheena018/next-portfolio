@@ -3,17 +3,14 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { assets } from "@/assets/assets";
-import { motion } from "motion/react";
 
 const Navbar = ({
   isDarkMode,
   setIsDarkMode,
 }: {
   isDarkMode: boolean;
-  setIsDarkMode: any;
+  setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-  console.log(isDarkMode);
-
   const sideMenuRef = useRef<HTMLDivElement | null>(null);
   const [isScroll, setIsScroll] = useState(false);
   const openMenu = () => {
@@ -28,7 +25,13 @@ const Navbar = ({
     }
   };
   const [activeSection, setActiveSection] = useState<string>("");
-
+  const navLinks = [
+    { name: "Home", path: "#top" },
+    { name: "About", path: "#about" },
+    { name: "Projects", path: "#projects" },
+    { name: "Services", path: "#services" },
+    { name: "Contact", path: "#contact" },
+  ];
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -53,14 +56,6 @@ const Navbar = ({
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const navLinks = [
-    { name: "Home", path: "#top" },
-    { name: "About", path: "#about" },
-    { name: "Projects", path: "#projects" },
-    { name: "Services", path: "#services" },
-    { name: "Contact", path: "#contact" },
-  ];
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
