@@ -38,7 +38,7 @@ const About = ({ isDarkMode }: { isDarkMode: boolean }) => {
           initial={{ scale: 0.9, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.6 }}
-          className="w-64 sm:w-80 rounded-3xl max-w-none h-40 bg-blue-300"
+          className="w-64 sm:w-80 rounded-3xl max-w-none"
         >
           <Image
             src={assets.profile}
