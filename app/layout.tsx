@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${outfitFont.className} leading-8 antialiased overflow-x-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} ${outfitFont.className} dark:bg-darkTheme dark:text-white leading-8 antialiased overflow-x-hidden`}
       >
         {children}
       </body>
