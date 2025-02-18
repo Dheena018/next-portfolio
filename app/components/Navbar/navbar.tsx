@@ -21,12 +21,39 @@ const Navbar = () => {
       sideMenuRef.current.style.transform = "translateX(16rem)";
     }
   };
+  const [activeSection, setActiveSection] = useState<string>("");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      let currentSection = "";
+
+      navLinks.forEach((link) => {
+        const section = document.querySelector(link.path) as HTMLElement | null;
+        if (section) {
+          const { offsetTop, offsetHeight } = section;
+          if (
+            scrollPosition >= offsetTop - 100 &&
+            scrollPosition < offsetTop + offsetHeight
+          ) {
+            currentSection = link.path;
+          }
+        }
+      });
+
+      setActiveSection(currentSection);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "Projects", path: "/projects" },
+    { name: "Home", path: "#top" },
     { name: "About", path: "#about" },
-    { name: "Contact", path: "/contact" },
+    { name: "Projects", path: "#projects" },
+    { name: "Services", path: "#services" },
+    { name: "Contact", path: "#contact" },
   ];
 
   useEffect(() => {
@@ -51,7 +78,7 @@ const Navbar = () => {
       >
         <div className="container mx-auto flex items-center justify-between p-4">
           {/* Logo */}
-          <Link href="/" className="text-2xl font-bold">
+          <Link href="#top" className="text-2xl font-bold">
             Dheena <b className="text-blue-700">.</b>
           </Link>
 
@@ -66,7 +93,9 @@ const Navbar = () => {
                 key={link.path}
                 href={link.path}
                 className={`${
-                  pathname === link.path ? "text-blue-400" : "text-gray-300"
+                  activeSection === link.path
+                    ? "text-blue-400"
+                    : "text-gray-400"
                 } hover:text-blue-400 transition`}
               >
                 {link.name}

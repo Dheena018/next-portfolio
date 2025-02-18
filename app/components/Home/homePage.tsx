@@ -26,7 +26,10 @@ export default function HomePage() {
     //     </p>
     //   </main>
     // </div>
-    <div className="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4">
+    <div
+      id="top"
+      className="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4"
+    >
       <h3 className="flex items-center text-center gap-2 text-xl md:text-2xl mb-3">
         Hi I'm Dheena{" "}
         <Image src={assets.hand_icon} alt="" className="w-6"></Image>
