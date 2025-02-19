@@ -22,18 +22,24 @@ const Footer = ({ isDarkMode }: { isDarkMode: boolean }) => {
         <p>&copy;2025 Dheena.All Rights reserved.</p>
         <ul className="flex items-center gap-10 justify-center mt-4 sm:mt-0">
           <li>
-            <a href="" target="_blank">
+            <a href="https://github.com/Dheena018" target="_blank">
               GitHub
             </a>
           </li>
           <li>
-            <a href="" target="_blank">
+            <a
+              href="https://www.linkedin.com/in/dheena-t-956263247/"
+              target="_blank"
+            >
               LinkedIn
             </a>
           </li>
           <li>
-            <a href="" target="_blank">
-              Twitter
+            <a
+              href="https://www.instagram.com/__dhxxna.___/?next=%2F"
+              target="_blank"
+            >
+              Instagram
             </a>
           </li>
         </ul>
